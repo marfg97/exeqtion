@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <!-- <html lang="es"> -->
 
+
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>exeqtion</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- CABECERA -->
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#features">SERVICIOS</a></li>
+                <li><a href="#features">Servicios</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
@@ -26,43 +29,63 @@
         </div>
     </section>
 
+<!-- SERVICIOS  -->
+
     <section id="features" class="features">
         <h2>SERVICIOS</h2>
-        <div class="feature">
-            <h3>PAGINAS WEB</h3>
-            <p>Descripción de la característica 1.</p>
+
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide" id="slide-1">
+                    <h3>PAGINAS WEB</h3>
+                    <p>Descripción de la característica 1.</p>
+                </div>
+                <div class="slide" id="slide-2">
+                    <h3>REDES</h3>
+                    <p>Descripción de la característica 2.</p>
+                </div>
+                <div class="slide" id="slide-3">
+                    <h3>SERVIDORES</h3>
+                    <p>Descripción de la característica 3.</p>
+                </div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            <div class="indicators">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </div>
-        <div class="feature">
-            <h3>REDES</h3>
-            <p>Descripción de la característica 2.</p>
-        </div>
-        <div class="feature">
-            <h3>SERVIDORES</h3>
-            <p>Descripción de la característica 3.</p>
-        </div>
+
+
     </section>
 
+<!-- CONTACTO -->
     <section id = "contact"> 
         <h2>Contacto</h2>
         <div class="contact-container">
             <div class="contact-info">
                 <div class="info-item">
-                    <img src="email-icon.png" alt="Email Icon">
+                    <img src="icons/icons8-email-50.png" alt="Email Icon">
                     <p>contacto@exeqtion.net</p>
                 </div>
                 <div class="info-item">
-                    <img src="phone-icon.png" alt="Phone Icon">
-                    <p>935349835 / 982 038 900</p>
+                    <img src="icons/icons8-whatsapp-45.png" alt="Phone Icon">
+                    <p>935 349 835 / 982 038 900</p>
                 </div>
                 <div class="info-item">
-                    <img src="location-icon.png" alt="Location Icon">
+                    <img src="icons/icons8-location-50.png" alt="Location Icon">
                     <p>Avenida Ingenieros</p>
                 </div>
                 <div class="social-icons">
-                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                    <a href="#"><img src="github-icon.png" alt="Github"></a>
-                    <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/profile.php?id=61556983171654&mibextid=ZbWKwL">
+                        <img src="icons/icons8-facebook-48.png" alt="Facebook"></a>
+                    <a href="https://github.com/codelock54">
+                        <img src="icons/icons8-github-50.png" alt="Github"></a>
+                    <a href="https://www.linkedin.com/company/100414399/admin/inbox/">
+                        <img src="icons/icons8-linkedin-48.png" alt="LinkedIn"></a>
+                    <!-- <a href="#"><img src="instagram-icon.png" alt="Instagram"></a> -->
                 </div>
             </div>
             <form action="submit_form.php" method="post" class="contact-form">
@@ -82,9 +105,10 @@
             </form>
         </div>
     </section>
-
+<!-- PIE DE PAGINA -->
     <footer id="rights">
         <p>&copy; 2024 EXEQTION. Todos los derechos reservados.</p>
     </footer>
+    <script src="scripts.js"> </script>
 </body>
 </html>
