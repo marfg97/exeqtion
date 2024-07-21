@@ -33,31 +33,62 @@ nav ul li a {
     font-weight: bold;
 }
 
+
 .hero {
-    background-color: #f4f4f4;
-    padding: 50px 0;
+    position: relative; 
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 500px 0;
+    width: 80%;
+    background-image: url("images/Logo-1000.png");
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 10px;
     text-align: center;
 }
 
 .hero-content {
-    max-width: 600px;
-    margin: 0 auto;
+   
+    /* max-width: 600px; */
+    /* padding: 20px;  */
 }
 
 .hero h1 {
+    position: absolute; 
+    top: 0; 
+    margin: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
     margin-bottom: 20px;
+    font-size: 8em;
+    
+    
 }
 
 .hero p {
     margin-bottom: 30px;
+    /* background-color: #bbb; */
+    font-size: 3em;
 }
 
-.btn {
+.hero .btn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 2em;
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #010b11; /* Color más oscuro al pasar el mouse */
 }
 
 .features {
@@ -179,6 +210,7 @@ footer {
     transition: transform 0.5s ease-in-out;
     width: 100%;
     height: 100%;
+    
 }
 
 .slide {
@@ -190,13 +222,27 @@ footer {
     background-color: #fff;
 }
 
+#slide-1 {
+    background-image: url('images/paginas-web.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: rgb(1, 1, 1);
+}
+
 #slide-2 {
     background-image: url('images/redes.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
-}
+    color: rgb(1, 1, 1);
 
+    }
+
+#slide-3 {
+    background-image: url('images/servidores-espejo.jpg');
+    background-size: cover;
+    background-position: center;
+    color: rgb(1, 1, 1);
+}
 .prev, .next {
     cursor: pointer;
     position: absolute;
