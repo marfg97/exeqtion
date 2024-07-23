@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Exeqtion</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="service-style.css">
 </head>
 <body>
     <!-- CABECERA -->
@@ -18,20 +18,21 @@
         </nav>
     </header>
 
+    <!-- MENU DESPLEGABLE -->
+    <section id="menu">
+        <button class="menu-btn">Selecciona un Servicio</button>
+        <div class="dropdown-content">
+            <a href="#" data-service="web">Páginas Web</a>
+            <a href="#" data-service="networks">Redes</a>
+            <a href="#" data-service="servers">Servidores</a>
+        </div>
+    </section>
+
     <!-- SERVICIOS DETALLADOS -->
     <section id="services-detail">
-        <h1>Nuestros Servicios</h1>
-        <div class="service">
-            <h2>PÁGINAS WEB</h2>
-            <p>Diseño y desarrollo de páginas y aplicaciones web adaptadas a tus necesidades.</p>
-        </div>
-        <div class="service">
-            <h2>REDES</h2>
-            <p>Diseño e implementación de redes seguras y eficientes para tu empresa.</p>
-        </div>
-        <div class="service">
-            <h2>SERVIDORES</h2>
-            <p>Gestión y configuración de servidores Linux y Windows para un rendimiento óptimo.</p>
+        <h1 id="service-title">Nuestros Servicios</h1>
+        <div id="service-description">
+            <p>Selecciona un servicio del menú para ver más detalles.</p>
         </div>
     </section>
 
@@ -39,6 +40,6 @@
     <footer id="rights">
         <p>&copy; 2024 EXEQTION. Todos los derechos reservados.</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="service-script.js"></script>
 </body>
 </html>
