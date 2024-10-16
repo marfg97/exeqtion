@@ -134,6 +134,7 @@ nav ul li a {
 .features {
     padding: 50px 20px;
     text-align: center;
+    background-color: #555;
 }
 
 .features h2 {
@@ -146,7 +147,9 @@ nav ul li a {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(168, 70, 70, 0.1);
+    /* text-align: center; */
+
 }
 
 .slides {
@@ -156,9 +159,9 @@ nav ul li a {
 
 .slide {
     min-width: 100%;
-    padding: 40px;
+    /* padding: 10px; */
     text-align: center;
-    background-color: #fff;
+    background-color: #303d49;
 }
 
 .prev, .next {
@@ -206,64 +209,85 @@ nav ul li a {
 
 /* CONTACTO */
 #contact {
-    padding: 50px 20px;
-    background-color: #ffffff;
-    text-align: center;
+    padding: 10px 80px;
+    background-color: #a49c9c;
+    text-align: center; 
+    
 }
 
+
+
 .contact-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content:space-between; /* Centrar el contenido horizontalmente */
+    align-items: flex-start; /* Alinear al inicio verticalmente */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten si es necesario */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
 }
 
 .contact-info {
-    margin-bottom: 30px;
+    flex: 1; /* Toma el 50% del espacio disponible */
+    max-width: 400px; /* Ancho máximo para la información de contacto */
+    margin-right: 20px; /* Espacio a la derecha del contenedor de información */
     text-align: left; /* Alinear texto a la izquierda */
 }
 
 .info-item {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .info-item img {
     margin-right: 10px;
-    vertical-align: middle; /* Alinea verticalmente el icono */
+    vertical-align: middle; /* Alinear verticalmente el icono */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* Alinear iconos a la izquierda */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 15px;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    width: 100%; /* Para ser más responsivo */
+    flex: 1; /* Toma el 50% del espacio disponible */
+    max-width: 400px; /* Ancho máximo para el formulario */
+    text-align: left; /* Alinear texto a la izquierda */
 }
 
 .contact-form label {
-    margin: 10px 0 5px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .contact-form input,
 .contact-form textarea {
+    width: 100%; /* Asegurarse de que ocupen todo el ancho disponible */
     padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .contact-form button {
-    background-color: #008cba;
+    background-color: #333;
     color: #fff;
+    padding: 10px 20px;
     border: none;
-    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 .contact-form button:hover {
-    background-color: #005f7f;
+    background-color: #555;
 }
+
 
 /* PIE DE PAGINA */
 footer {
