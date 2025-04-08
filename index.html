@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NM0FVBRE7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8NM0FVBRE7');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exeqtion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- CABECERA -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="images/Logo001.png" alt="Logo Empresa">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#features">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+                <!-- <button class="contact-btn">Contáctanos</button> -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>EXEQTION</h1>
+            <p>Optimiza tus procesos de negocios, aumenta tus ventas.</p>
+            <a href="services.html" class="btn">Ver Más</a>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="features" class="features">
+        <h2>SERVICIOS</h2>
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide" id="slide-1">
+                    <h3>PAGINAS WEB</h3>
+                    <p>Diseño y desarrollo de páginas y aplicaciones web.</p>
+                </div>
+                <div class="slide" id="slide-2">
+                    <h3>REDES</h3>
+                    <p>Diseño e implementación de redes.</p>
+                </div>
+                <div class="slide" id="slide-3">
+                    <h3>SERVIDORES</h3>
+                    <p>Servidores Linux y Windows.</p>
+                </div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            <div class="indicators">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+        <h2>Contacto</h2>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <img src="icons/icons8-email-50.png" alt="Icono de Email">
+                    <p>contacto@exeqtion.net</p>
+                </div>
+                <div class="info-item">
+                    <img src="icons/icons8-whatsapp-45.png" alt="Icono de WhatsApp">
+                    <p>935 349 835 / 982 038 900</p>
+                </div>
+                <div class="info-item">
+                    <img src="icons/icons8-location-50.png" alt="Icono de Ubicación">
+                    <p>Avenida Ingenieros</p>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61556983171654&mibextid=ZbWKwL">
+                        <img src="icons/icons8-facebook-48.png" alt="Facebook"></a>
+                    <a href="https://github.com/codelock54">
+                        <img src="icons/icons8-github-50.png" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/company/100414399/admin/inbox/">
+                        <img src="icons/icons8-linkedin-48.png" alt="LinkedIn"></a>
+                </div>
+
+            </div>
+
+            <form action="submit_form.php" method="post" class="contact-form">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        
+    </section>
+
+    <!-- PIE DE PAGINA -->
+    <footer id="rights">
+        <p>&copy; 2024 EXEQTION. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+/* Cabecera */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+}
+
+
+nav {
+    display: flex; /* Usar flexbox para la navegación */
+    align-items: center; /* Centrar verticalmente */
+    justify-content:center;
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /* justify-content: center;
+    flex-grow: 1;
+    align-items: center; */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-btn {
+    background-color: #008cba; /* Cambia el color según sea necesario */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: #005f7f; /* Color al pasar el mouse */
+}
+/* MAIN */
+.hero {
+    position: relative;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 100px 20px; /* Espaciado interno */
+    background-image: url("images/server03.jpg");
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: cover; /* La imagen cubre todo el área */
+    background-position: center; /* Centrar la imagen */
+    min-height: 600px; /* Altura mínima para la sección */
+    text-align: center;
+}
+
+.hero::before {
+    content: ""; /* Necesario para crear un pseudo-elemento */
+    position: absolute; /* Posicionar sobre el fondo */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(115, 102, 102, 0.5); /* Color blanco con opacidad */
+    z-index: 1; /* Asegúrate de que esté debajo del contenido */
+}
+
+.hero-content {
+    position: absolute; /* Cambiar a posición absoluta */
+    bottom: 70px; /* Espacio desde la parte inferior */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar para centrar */
+    background-color: rgba(201, 194, 194, 0.8); /* Fondo blanco semitransparente */
+    border: 2px solid #333; /* Borde del recuadro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */
+    max-width: 600px; /* Ancho máximo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    z-index: 2;    
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 4em;
+    color: #0b0b0b;
+}
+
+.hero p {
+    margin: 20px 0; /* Margen ajustado */
+    font-size: 1.5em;
+    color: #010b11;
+}
+
+.hero .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #010b11; 
+}
+
+
+
+/* SERVICIOS */
+.features {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #555;
+}
+
+.features h2 {
+    margin-bottom: 40px;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(168, 70, 70, 0.1);
+    /* text-align: center; */
+
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    /* padding: 10px; */
+    text-align: center;
+    background-color: #303d49;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.indicators {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+}
+
+.active {
+    background-color: #333;
+}
+
+/* CONTACTO */
+#contact {
+    padding: 10px 80px;
+    background-color: #a49c9c;
+    text-align: center; 
+    
+}
+
+
+
+.contact-container {
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content:space-between; /* Centrar el contenido horizontalmente */
+    align-items: flex-start; /* Alinear al inicio verticalmente */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten si es necesario */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.contact-info {
+    flex: 1; /* Toma el 50% del espacio disponible */
+    max-width: 400px; /* Ancho máximo para la información de contacto */
+    margin-right: 20px; /* Espacio a la derecha del contenedor de información */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item img {
+    margin-right: 10px;
+    vertical-align: middle; /* Alinear verticalmente el icono */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* Alinear iconos a la izquierda */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+}
+
+.contact-form {
+    flex: 1; /* Toma el 50% del espacio disponible */
+    max-width: 400px; /* Ancho máximo para el formulario */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Asegurarse de que ocupen todo el ancho disponible */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+
+/* PIE DE PAGINA */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Cambiar dirección en móviles */
+    }
+
+    nav ul {
+        flex-direction: column; /* Listar verticalmente en móviles */
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Ajuste para dispositivos pequeños */
+    }
+
+    .hero p {
+        font-size: 1em; /* Ajuste para dispositivos pequeños */
+    }
+}
