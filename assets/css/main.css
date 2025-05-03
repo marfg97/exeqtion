@@ -10,7 +10,7 @@
     --negro: #000000;
     --blanco: #ffffff;
     --gris-oscuro: #2a2a2a;
-    --gris-medio: #666666;
+    --gris-medio: #c5c2c2;
     --gris-claro: #f5f5f5;
 }
 
@@ -1474,7 +1474,7 @@ input, select, textarea {
 		}
 
 		header.style1 p {
-			color: #b1b4b9;
+			color: #c6c8ce;
 			display: block;
 			margin: 1.15em 0 0 0;
 			font-size: 1.3em;
@@ -1860,7 +1860,7 @@ input, select, textarea {
 		}
 
 		.feature-list h3 {
-			color: #666 !important;
+			color: #b4b8bb !important;
 			margin: -0.35em 0 0.75em 0;
 			font-size: 1.15em;
 			letter-spacing: 0.05em;
@@ -2027,7 +2027,8 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background: #232746;
+			/* background: #242746; */
+			background: #152233;
 		}
 
 			.wrapper.style2 .title {
@@ -2045,7 +2046,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 .image {
-				border: solid 10px #252336;
+				border: solid 10px #3d3866;
 			}
 
 /* Page Wrapper */

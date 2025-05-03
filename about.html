@@ -55,7 +55,7 @@
                                 <article class="box post">
                                     <header class="style1">
                                         <h2>Innovación tecnológica con propósito</h2>
-                                        <p>Desde 2018 liderando la transformación digital</p>
+                                        <p>Liderando la transformación digital</p>
                                     </header>
                                     <a href="#" class="image featured">
                                         <img src="images/team.jpg" alt="Equipo Exeqtion" />
@@ -72,7 +72,7 @@
                                     </ul>
                                 </article>
                                 <div class="row gtr-150">
-                                    <div class="col-6 col-12-small">
+                                    <!-- <div class="col-6 col-12-small">
                                         <section class="box">
                                             <header>
                                                 <h2>Casos de Éxito</h2>
@@ -81,7 +81,7 @@
                                             <p>Implementación de plataforma bancaria en la nube para líder en servicios financieros.</p>
                                             <a href="#" class="button style1">Ver estudio</a>
                                         </section>
-                                    </div>
+                                    </div> -->
                                     <div class="col-6 col-12-small">
                                         <section class="box">
                                             <header>
@@ -99,7 +99,7 @@
                         <div class="col-4 col-12-medium">
                             <!-- Sidebar -->
                             <div id="sidebar">
-                                <section class="box">
+                                <!-- <section class="box">
                                     <header>
                                         <h2>Logros Clave</h2>
                                     </header>
@@ -109,7 +109,7 @@
                                         <li>Premio a la Innovación 2022</li>
                                         <li>Certificación ISO 27001</li>
                                     </ul>
-                                </section>
+                                </section> -->
                                 <section class="box">
                                     <header>
                                         <h2>Equipo Directivo</h2>
@@ -181,72 +181,88 @@
                     <div class="row">
                         <div class="col-6 col-12-medium">
                             <!-- Contact Form -->
-                            <section>
-                                <form method="post" action="#">
-                                    <div class="row gtr-50">
-                                        <div class="col-6 col-12-small">
-                                            <input type="text" name="name" id="contact-name" placeholder="Nombre" />
+                                <section>
+                                    <form method="post" action="https://formspree.io/f/xvgakkyz">
+                                        <div class="row gtr-50">
+                                            <div class="col-6 col-12-small">
+                                                <input type="text" name="name" id="contact-name" placeholder="Nombre" required />
+                                            </div>
+                                            <div class="col-6 col-12-small">
+                                                <input type="email" name="email" id="contact-email" placeholder="Email" required />
+                                            </div>
+                                            <div class="col-12">
+                                                <select name="service" placeholder="Nombre" required 
+                                                style="color: #696868;
+                                                -webkit-appearance: none;
+                                                -moz-appearance: none;
+                                                appearance: none;">>
+                                                    <option value="">Seleccione Servicio</option>
+                                                    <option>Infraestructura de Redes</option>
+                                                    <option>Administración de Servidores</option>
+                                                    <option>Soluciones Cloud</option>
+                                                    <option>Análisis de Datos</option>
+                                                    <!-- <option>Sistemas Predictivos</option> -->
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea name="message" id="contact-message" placeholder="Describa sus necesidades técnicas" rows="4" required></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <ul class="actions">
+                                                    <li><input type="submit" class="style1" value="Enviar Consulta" /></li>
+                                                    <li><input type="reset" class="style2" value="Limpiar" /></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="col-6 col-12-small">
-                                            <input type="text" name="email" id="contact-email" placeholder="Correo electrónico" />
-                                        </div>
-                                        <div class="col-12">
-                                            <textarea name="message" id="contact-message" placeholder="Mensaje" rows="4"></textarea>
-                                        </div>
-                                        <div class="col-12">
-                                            <ul class="actions">
-                                                <li><input type="submit" class="style1" value="Enviar" /></li>
-                                                <li><input type="reset" class="style2" value="Limpiar" /></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </form>
-                            </section>
+                                    </form>
+                                </section>
                         </div>
                         <div class="col-6 col-12-medium">
                             <!-- Contact -->
-                            <section class="feature-list small">
-                                <div class="row">
-                                    <div class="col-6 col-12-small">
-                                        <section>
-                                            <h3 class="icon solid fa-home">Oficinas</h3>
-                                            <p>
-                                                Exeqtion Technologies<br />
-                                                Av. Innovación 2500<br />
-                                                Barcelona, España
-                                            </p>
-                                        </section>
+                                <section class="feature-list small">
+                                    <div class="row">
+                                        <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-headset">Soporte 24/7</h3>
+                                                <p>
+                                                    <a href="https://wa.me/51937091521" target="_blank" rel="noopener noreferrer">+51 937 091 521</a><br />
+                                                    <a href="mailto:ventas@exeqtion.net" target="_blank" rel="noopener noreferrer">info@exeqtion.net</a>
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-comment">Redes Profesionales</h3>
+                                                <div class="icon-container" style="display: flex; gap: 1.5rem; align-items: center;">
+                                                    <a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a>
+                                                    <a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a>
+                                                    <a href="https://www.facebook.com/profile.php?id=61556983171654" 
+                                                       class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <!-- <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-map-marker">Oficinas</h3>
+                                                <p>
+                                                    Av. Ingenieros 255<br />
+                                                    La Molina, Lima<br />
+                                                    Perú
+                                                </p>
+                                            </section>
+                                        </div> -->
+                                        <!-- <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-certificate">Certificaciones</h3>
+                                                <p>
+                                                    AWS Partner<br />
+                                                    Microsoft Gold Partner<br />
+                                                    Cisco Premier Certified
+                                                </p>
+                                            </section>
+                                        </div> -->
                                     </div>
-                                    <div class="col-6 col-12-small">
-                                        <section>
-                                            <h3 class="icon solid fa-comment">Redes Sociales</h3>
-                                            <p>
-                                                <a href="#">@exeqtion</a><br />
-                                                <a href="#">linkedin.com/exeqtion</a><br />
-                                                <a href="#">github.com/exeqtion</a>
-                                            </p>
-                                        </section>
-                                    </div>
-                                    <div class="col-6 col-12-small">
-                                        <section>
-                                            <h3 class="icon solid fa-envelope">Contacto</h3>
-                                            <p>
-                                                <a href="#">info@exeqtion.com</a><br />
-                                                <a href="#">soporte@exeqtion.com</a>
-                                            </p>
-                                        </section>
-                                    </div>
-                                    <div class="col-6 col-12-small">
-                                        <section>
-                                            <h3 class="icon solid fa-phone">Teléfonos</h3>
-                                            <p>
-                                                +51 937 091 521<br />
-                                                
-                                            </p>
-                                        </section>
-                                    </div>
-                                </div>
-                            </section>
+                                </section>
                         </div>
                     </div>
                     <div id="copyright">
