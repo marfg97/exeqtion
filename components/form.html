@@ -1,0 +1,110 @@
+<section>
+    <!-- <form id="contact-form" 
+    method="post" action="https://formspree.io/f/xvgakkyz"> -->
+    
+    <form id="contact-form" >
+        <div class="row gtr-50">
+            <div class="col-6 col-12-small">
+                <input type="text" name="name" id="contact-name" placeholder="Nombre" required  style="color: #1f1c1c;"/>
+            </div>
+            <div class="col-6 col-12-small">
+                <input type="email" name="email" id="contact-email" placeholder="Email" required style="color: #1f1c1c;"/>
+            </div>
+            <div class="col-12">
+                <select name="service" required 
+                style="color: #1f1c1c;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;">
+                    <option value="">Seleccione Servicio</option>
+                    <option>Infraestructura de Redes</option>
+                    <option>Administración de Servidores</option>
+                    <option>Soluciones Cloud</option>
+                    <option>Análisis de Datos</option>
+                    <!-- <option>Sistemas Predictivos</option> -->
+                </select>
+            </div>
+            <div class="col-12">
+                <textarea name="message" id="contact-message" placeholder="Describa sus necesidades técnicas" rows="6" required style="color: #1f1c1c;" ></textarea>
+            </div>
+            <div class="g-recaptcha" 
+                data-sitekey="6Lex9DUrAAAAADzdpjIwbSZhI7BU-9IaDppfonGG" 
+                data-callback="onCaptchaSuccess" 
+                data-expired-callback="onCaptchaExpired"
+                style="margin: 1em 0;">
+            </div>
+    
+            
+            <div class="col-12">
+                <ul class="actions">
+                    <!-- <li><input type="submit" class="style1" value="Enviar Consulta" /></li> -->
+                    <li><button type="submit" class="style1 g-recaptcha " 
+                        data-sitekey="6Lex9DUrAAAAADzdpjIwbSZhI7BU-9IaDppfonGG"
+                        data-callback="onCaptchaSuccess" 
+                        data-action='submit'>Enviar Consulta</button></li>
+                    <li><input type="reset" class="style2" value="Limpiar" /></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    <script>
+        let captchaVerified = false;
+
+        function onCaptchaSuccess(token) {
+            captchaVerified = true;
+            if(document.getElementById('contact-form').checkValidity()) {
+                document.getElementById('contact-form').requestSubmit();
+            }
+        }
+
+        function onCaptchaExpired() {
+            captchaVerified = false;
+            grecaptcha.reset();
+        }
+
+        // Manejo del formulario
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!captchaVerified) {
+                alert('Por favor complete el CAPTCHA');
+                grecaptcha.reset();
+                return;
+            }
+
+            const formData = {
+                nombre: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                servicio: document.querySelector('[name="service"]').value,
+                mensaje: document.getElementById('contact-message').value,
+                'g-recaptcha-response': grecaptcha.getResponse()
+            };
+
+            try {
+                const response = await fetch('https://4g2i5430kd.execute-api.us-east-1.amazonaws.com/prod/Contact-exeqtion', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert('Mensaje enviado correctamente');
+                    document.getElementById('contact-form').reset();
+                    grecaptcha.reset();
+                } else {
+                    throw new Error(data.error || 'Error al enviar el formulario');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert(`Error: ${error.message}`);
+            } finally {
+                captchaVerified = false;
+            }
+        });
+    </script>
+</section>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-			
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NM0FVBRE7"></script>
 		<script>
@@ -12,6 +12,11 @@
 		gtag('config', 'G-8NM0FVBRE7');
 		</script>
 		<title>Exeqtion - Soluciones Tecnológicas Integrales</title>
+
+		 <!-- Favicon -->
+		 <!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		 <link rel="shortcut icon" href="images/favicon.ico"> -->
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="Expertos en infraestructura TI, cloud computing y análisis predictivo">
@@ -21,32 +26,7 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<section id="header" class="wrapper">
-					<!-- Logo -->
-						<div id="logo">
-							<h1><a href="index.html">Exeqtion</a></h1>
-							<p>Infraestructura Inteligente para Negocios Digitales</p>
-						</div>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="index.html">Inicio</a></li>
-								<li>
-									<a href="services.html">Servicios</a>
-									<ul>
-										<li><a href="services.html#redes">Infraestructura de Redes</a></li>
-										<li><a href="services.html#servidores">Administración de Servidores</a></li>
-										<li><a href="services.html#cloud">Soluciones Cloud</a></li>
-										<li><a href="services.html#datos">Análisis de Datos</a></li>
-									</ul>
-								</li>
-								
-								 <li><a href="about.html">Sobre Nosotros</a></li>
-								<li><a href="contact.html">Contacto</a></li>
-							</ul>
-						</nav>
-				</section>
+			<div id="header-container"></div>
 
 			<!-- Intro -->
 				<section id="intro" class="wrapper style1">
@@ -128,116 +108,23 @@
 							</p>
 						</header>
 						<div class="row">
-							<div class="col-6 col-12-medium">
+							<div class="col-6 col-12-medium" id="contact-form-container">
 								<!-- Contact Form -->
-									<section>
-										<form method="post" action="https://formspree.io/f/xvgakkyz">
-											<div class="row gtr-50">
-												<div class="col-6 col-12-small">
-													<input type="text" name="name" id="contact-name" placeholder="Nombre" required />
-												</div>
-												<div class="col-6 col-12-small">
-													<input type="email" name="email" id="contact-email" placeholder="Email" required />
-												</div>
-												<div class="col-12">
-													<select name="service" required 
-													style="color: #696868;
-													-webkit-appearance: none;
-													-moz-appearance: none;
-													appearance: none;">
-														<option value="">Seleccione Servicio</option>
-														<option>Infraestructura de Redes</option>
-														<option>Administración de Servidores</option>
-														<option>Soluciones Cloud</option>
-														<option>Análisis de Datos</option>
-														<!-- <option>Sistemas Predictivos</option> -->
-													</select>
-												</div>
-												<div class="col-12">
-													<textarea name="message" id="contact-message" placeholder="Describa sus necesidades técnicas" rows="4" required></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" class="style1" value="Enviar Consulta" /></li>
-														<li><input type="reset" class="style2" value="Limpiar" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-										<script>
-											document.getElementById('contactForm').addEventListener('submit', async (e) => {
-											  e.preventDefault();
-											  
-											  const formData = {
-												nombre: document.getElementById('nombre').value,
-												email: document.getElementById('email').value,
-												mensaje: document.getElementById('mensaje').value
-											  };
-										  
-											  try {
-												const response = await fetch('http://localhost:5000/api/contacto', {
-												  method: 'POST',
-												  headers: { 'Content-Type': 'application/json' },
-												  body: JSON.stringify(formData)
-												});
-										  
-												if (response.ok) {
-												  alert('Mensaje enviado correctamente');
-												  document.getElementById('contactForm').reset();
-												} else {
-												  throw new Error('Error al enviar');
-												}
-											  } catch (error) {
-												alert('Error: ' + error.message);
-											  }
-											});
-										  </script>
-									</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<!-- Contact -->
-									<section class="feature-list small">
-										<div class="row">
-											<div class="col-6 col-12-small">
-												<section>
-													<h3 class="icon solid fa-headset">Soporte 24/7</h3>
-													<p>
-														<a href="https://wa.me/51937091521" target="_blank" rel="noopener noreferrer">+51 937 091 521</a><br />
-														<a href="mailto:ventas@exeqtion.net" target="_blank" rel="noopener noreferrer">info@exeqtion.net</a>
-													</p>
-												</section>
-											</div>
-											<div class="col-6 col-12-small">
-												<section>
-													<h3 class="icon solid fa-comment">Redes Profesionales</h3>
-													<div class="icon-container" style="display: flex; gap: 1.5rem; align-items: center;">
-														<a href="https://www.linkedin.com/company/exeqtion/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a>
-														<a href="https://github.com/exeqtion-pe" class="icon brands fa-github"><span class="label">GitHub</span></a>
-														<a href="https://www.facebook.com/profile.php?id=61556983171654" 
-														   class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
-													</div>
-												</section>
-											</div>
-										
-										</div>
-									</section>
-							</div>
-						</div>
-						<div id="copyright">
-							<ul>
-								<li>&copy; 2023 Exeqtion. Consultoría Tecnológica Avanzada</li>
+
 								
-								<li>
+							</div>
+							<div class="col-6 col-12-medium" id="social-section-container">
+								<!-- Contact -->
 									
-									Design: <a href="https://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
-								</li>
-							</ul>
+							</div>
 						</div>
+						<div id="copyright-container"></div>
 					</div>
 				</section>
 		</div>
 
 		<!-- Scripts -->
+			<script src="load-components.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

@@ -1541,6 +1541,7 @@ input, select, textarea {
 		border-radius: 0.35em;
 		width: 100%;
 		padding: 0.75em 1em 0.75em 1em;
+		
 	}
 
 		form input[type="text"]:focus,
@@ -1551,18 +1552,19 @@ input, select, textarea {
 			background: #f8f8f8;
 		}
 
-	form input[type="text"],
+	/* form input[type="text"], */
 	form input[type="email"]
 	input[type="password"] {
 		line-height: 1em;
 	}
 
 	form select {
-		line-height: 1em;
+		line-height: 1.8;
 	}
 
 	form textarea {
 		min-height: 8em;
+		resize: vertical;
 	}
 
 	form ul.actions {
@@ -1570,7 +1572,7 @@ input, select, textarea {
 	}
 
 	form ::-webkit-input-placeholder {
-		color: #555 !important;
+		color: #1f1c1c !important;
 		font-style: italic;
 		line-height: 1.35em;
 	}
@@ -2320,7 +2322,7 @@ input, select, textarea {
 		#footer input[type="reset"],
 		#footer button,
 		#footer .button {
-			color: #fff;
+			color: #0b0c0c;
 			box-shadow: inset 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
 		}
 
@@ -2331,6 +2333,7 @@ input, select, textarea {
 			#footer .button:hover {
 				color: #fff;
 				box-shadow: inset 0px 0px 2px 0px rgba(255, 255, 255, 0.65);
+				background-color: #2f3444;
 			}
 
 			#footer input[type="button"]:active,
@@ -3023,3 +3026,4 @@ input, select, textarea {
 						}
 
 	}
+
