@@ -20,7 +20,7 @@ const CONFIG = {
       priority: 3,
     },
     {
-      id: 'copyright-container',
+      id: 'copyright',
       file: 'components/copyright.html',
       priority: 4,
     }
@@ -92,19 +92,42 @@ class ComponentLoader {
     }
   }
 
+  // executeScripts(container) {
+  //   const scripts = Array.from(container.getElementsByTagName('script'));
+  //   scripts.forEach(script => {
+  //     const newScript = document.createElement('script');
+  //     if (script.src) {
+  //       newScript.src = script.src;
+  //       newScript.async = false;
+  //     } else {
+  //       newScript.textContent = script.textContent;
+  //     }
+  //     document.body.appendChild(newScript);
+  //   });
+  // }
+
   executeScripts(container) {
     const scripts = Array.from(container.getElementsByTagName('script'));
+  
     scripts.forEach(script => {
       const newScript = document.createElement('script');
+  
+      // Detectar si es módulo
+      const isModule = /import[\s(]|import\.meta/.test(script.textContent || '');
+  
       if (script.src) {
         newScript.src = script.src;
         newScript.async = false;
+        if (isModule) newScript.type = 'module';
       } else {
         newScript.textContent = script.textContent;
+        if (isModule) newScript.type = 'module';
       }
+  
       document.body.appendChild(newScript);
     });
   }
+  
 
   getCachedComponent(file) {
     const cacheKey = `component:${file}`;
