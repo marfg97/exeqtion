@@ -14,8 +14,11 @@ jobs:
         run: |
           sed -i "s|__FORMSPREE_API__|${{ secrets.FORMSPREE_API }}|g" components/form.html
           
-      - name: Deploy to GitHub Pages
+
+
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ github.token }} 
           publish_dir: ./
+          publish_branch: gh-pages
