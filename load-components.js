@@ -67,13 +67,13 @@ class ComponentLoader {
       const container = document.getElementById(component.id);
       if (!container) return;
 
-      // // Verificar caché válido
-      // const cached = this.getCachedComponent(component.file);
-      // if (cached) {
-      //   container.innerHTML = cached;
-      //   this.executeScripts(container);
-      //   return;
-      // }
+      // Verificar caché válido
+      const cached = this.getCachedComponent(component.file);
+      if (cached) {
+        container.innerHTML = cached;
+        this.executeScripts(container);
+        return;
+      }
 
       // Cargar desde red
       const response = await fetch(component.file);
@@ -91,6 +91,19 @@ class ComponentLoader {
     }
   }
 
+  // executeScripts(container) {
+  //   const scripts = Array.from(container.getElementsByTagName('script'));
+  //   scripts.forEach(script => {
+  //     const newScript = document.createElement('script');
+  //     if (script.src) {
+  //       newScript.src = script.src;
+  //       newScript.async = false;
+  //     } else {
+  //       newScript.textContent = script.textContent;
+  //     }
+  //     document.body.appendChild(newScript);
+  //   });
+  // }
 
   executeScripts(container) {
     const scripts = Array.from(container.getElementsByTagName('script'));
