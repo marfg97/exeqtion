@@ -27,86 +27,18 @@
             <div class="col-12">
                 <textarea name="message" id="contact-message" placeholder="Describa sus necesidades técnicas" rows="6" required style="color: #1f1c1c;" ></textarea>
             </div>
-            <!-- <div class="g-recaptcha" 
-                data-sitekey="6Lex9DUrAAAAADzdpjIwbSZhI7BU-9IaDppfonGG" 
-                data-callback="onCaptchaSuccess" 
-                data-expired-callback="onCaptchaExpired"
+            <div class="g-recaptcha" 
+                data-sitekey="6LfU9FQrAAAAAFsR3QBHWYLx12Q6EJhsxeqBPEyu" 
                 style="margin: 1em 0;">
             </div>
-     -->
-            
+    
             <div class="col-12">
                 <ul class="actions">
                     <li><input type="submit" class="style1" value="Enviar Consulta" /></li>
-                    <!-- <li><button type="submit" class="style1 g-recaptcha " 
-                        data-sitekey="6Lex9DUrAAAAADzdpjIwbSZhI7BU-9IaDppfonGG"
-                        data-callback="onCaptchaSuccess" 
-                        data-action='submit'>Enviar Consulta</button></li> -->
-                        
                     <li><input type="reset" class="style2" value="Limpiar" /></li>
                 </ul>
             </div>
         </div>
     </form>
-    <script>
-    
-        // let captchaVerified = false;
-
-        // function onCaptchaSuccess(token) {
-        //     captchaVerified = true;
-        //     if(document.getElementById('contact-form').checkValidity()) {
-        //         document.getElementById('contact-form').requestSubmit();
-        //     }
-        // }
-
-        // function onCaptchaExpired() {
-        //     captchaVerified = false;
-        //     grecaptcha.reset();
-        // }
-
-        // // Manejo del formulario
-        // document.getElementById('contact-form').addEventListener('submit', async (e) => {
-        //     e.preventDefault();
-            
-        //     if (!captchaVerified) {
-        //         alert('Por favor complete el CAPTCHA');
-        //         grecaptcha.reset();
-        //         return;
-        //     }
-
-        //     const formData = {
-        //         nombre: document.getElementById('contact-name').value,
-        //         email: document.getElementById('contact-email').value,
-        //         servicio: document.querySelector('[name="service"]').value,
-        //         mensaje: document.getElementById('contact-message').value,
-        //         'g-recaptcha-response': grecaptcha.getResponse()
-        //     };
-
-        //     try {
-        //         const response = await fetch(Form_link, {
-        //             method: 'POST',
-        //             headers: { 
-        //                 'Content-Type': 'application/json',
-        //                 'Accept': 'application/json'
-        //             },
-        //             body: JSON.stringify(formData)
-        //         });
-
-        //         const data = await response.json();
-                
-        //         if (response.ok) {
-        //             alert('Mensaje enviado correctamente');
-        //             document.getElementById('contact-form').reset();
-        //             grecaptcha.reset();
-        //         } else {
-        //             throw new Error(data.error || 'Error al enviar el formulario');
-        //         }
-        //     } catch (error) {
-        //         console.error('Error:', error);
-        //         alert(`Error: ${error.message}`);
-        //     } finally {
-        //         captchaVerified = false;
-        //     }
-        // });
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </section>
