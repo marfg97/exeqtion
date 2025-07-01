@@ -115,10 +115,37 @@ input, select, textarea {
 		letter-spacing: 0.025em;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	
+
+	h1, h2 {
 		font-weight: 700;
-		color: var(--negro);
+		color: #9e9c9c;                
+		text-shadow: 
+			0 0 8px rgba(130, 130, 131, 0.5);         
 	}
+
+	h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
+  color: #000000;
+}
+
+h4 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Estilo para h5 y h6 */
+h5, h6 {
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
