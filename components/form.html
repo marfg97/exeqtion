@@ -1,17 +1,16 @@
 <section>
-    <form id="contact-form" 
-    method="POST" action="https://formspree.io/f/myzjygjj"> 
-    
+    <form id="contact-form">
+
     <!-- <form id="contact-form" > -->
         <div class="row gtr-50">
             <div class="col-6 col-12-small">
-                <input type="text" name="name" id="contact-name" placeholder="Nombre" required  style="color: #1f1c1c;"/>
+                <input type="text" name="nombre" id="contact-name" placeholder="Nombre" required  style="color: #1f1c1c;"/>
             </div>
             <div class="col-6 col-12-small">
                 <input type="email" name="email" id="contact-email" placeholder="Email" required style="color: #1f1c1c;"/>
             </div>
             <div class="col-12">
-                <select name="service" required 
+                <select name="servicio" required
                 style="color: #1f1c1c;
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -25,13 +24,13 @@
                 </select>
             </div>
             <div class="col-12">
-                <textarea name="message" id="contact-message" placeholder="Describa sus necesidades técnicas" rows="6" required style="color: #1f1c1c;" ></textarea>
-            </div>
-            <div class="g-recaptcha" 
-                data-sitekey="6LfU9FQrAAAAAFsR3QBHWYLx12Q6EJhsxeqBPEyu" 
+                <textarea name="mensaje" id="contact-message" placeholder="Describa sus necesidades técnicas" rows="6" required style="color: #1f1c1c;" ></textarea>
+             </div>
+            <!-- <div class="g-recaptcha"
+                data-sitekey="6LfU9FQrAAAAAFsR3QBHWYLx12Q6EJhsxeqBPEyu"
                 style="margin: 1em 0;">
-            </div>
-    
+            </div> --> 
+
             <div class="col-12">
                 <ul class="actions">
                     <li><input type="submit" class="style1" value="Enviar Consulta" /></li>
@@ -40,5 +39,60 @@
             </div>
         </div>
     </form>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <div id="form-message" style="display:none; padding:15px; margin-top:20px; border-radius:5px;"></div>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+
+<script>
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+
+            const formData = new FormData(e.target);
+
+            // Parsear a Json
+            const jsonData = {};
+            formData.forEach((value, key) => jsonData[key] = value);
+
+
+            // Enviar a la API
+            try {
+                const response = await fetch('https://api.exeqtion.net', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                });
+
+
+                if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                showMessage('Consulta enviada con éxito! Nos pondremos en contacto pronto.', 'success');
+
+                document.getElementById('contact-form').reset();
+
+            } catch (error) {
+                showMessage('Error de conexión. Por favor intente nuevamente.', 'error');
+
+                console.error('Error:', error);
+            }
+        });
+
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.textContent = text;
+            messageDiv.style.display = 'block';
+            messageDiv.style.background = type === 'success' ? '#d4edda' : '#f8d7da';
+            messageDiv.style.color = type === 'success' ? '#155724' : '#721c24';
+
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+</script>
+
 </section>
